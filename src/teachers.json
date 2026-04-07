@@ -1,0 +1,12 @@
+{
+  "teachers": [
+    {
+      "username": "teacher1",
+      "password": "$2b$12$7qJ8m0Y9V0Qx1yR6W3mW7eQ0uJmZQ6mK2zG5Jf2wP8nV4xL1rH9aK"
+    },
+    {
+      "username": "coach.smith",
+      "password": "$2b$12$4nD2sT7pL1cQ9vB6xM5kUeR8yH3wF0zN6jA2pS7dK4mX9tC1qV8yG"
+    }
+  ]
+}
