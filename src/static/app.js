@@ -21,7 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showMessage(type, text) {
     messageDiv.textContent = text;
-    messageDiv.className = type;
+    messageDiv.classList.add("message");
+    messageDiv.classList.remove("success", "error", "info");
+    if (type) {
+      messageDiv.classList.add(type);
+    }
     messageDiv.classList.remove("hidden");
 
     setTimeout(() => {
