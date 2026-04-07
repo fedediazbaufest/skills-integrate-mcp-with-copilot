@@ -45,6 +45,14 @@ header {
   font-size: 14px;
 }
 
+.icon-btn:hover,
+.icon-btn:focus-visible {
+  background-color: #ffffff;
+  color: #1a237e;
+  border-color: #aebeff;
+  outline: 2px solid #1a237e;
+  outline-offset: 2px;
+}
 .secondary-btn {
   background-color: #455a64;
 }
