@@ -25,8 +25,17 @@ app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
 
 def load_teacher_credentials():
     teachers_path = current_dir / "teachers.json"
-    with open(teachers_path, "r", encoding="utf-8") as teachers_file:
-        teachers_data = json.load(teachers_file)
+    try:
+        with open(teachers_path, "r", encoding="utf-8") as teachers_file:
+            teachers_data = json.load(teachers_file)
+    except FileNotFoundError:
+        print(f"WARNING: Teacher credentials file not found at {teachers_path}. "
+              "Teacher login will be disabled.")
+        return {}
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(
+            f"Invalid JSON in teacher credentials file {teachers_path}: {exc}"
+        ) from exc
     teachers = teachers_data.get("teachers", [])
     return {
         teacher["username"]: teacher
